@@ -3,11 +3,6 @@ import Link from 'next/link'
 import WordSearch from '@/components/WordSearch'
 import RandomWordList from '@/components/RandomWordsList'
 async function InitialPage() {
-	const randomWord = (
-		await (
-			await fetch('https://random-word-api.vercel.app/api?words=1', {})
-		).json()
-	)[0]
 	return (
 		<div className='flex items-center justify-center flex-col gap-8 fixed -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
 			<div className='text-center'>
