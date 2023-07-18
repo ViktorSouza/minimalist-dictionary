@@ -21,8 +21,8 @@ export default function LoginPage() {
 
 	if (session.status == 'authenticated') redirect('/')
 	return (
-		<div className='max-w-md'>
-			<h1 className='text-2xl lg:text-4xl mb-5 font-medium text-6ky-900 dark:text-sky-400 '>
+		<div className='max-w-md mx-auto'>
+			<h1 className='text-2xl lg:text-4xl mb-5 font-medium text-6ky-900 dark:text-sky-400 text-center'>
 				Login
 			</h1>
 			<form

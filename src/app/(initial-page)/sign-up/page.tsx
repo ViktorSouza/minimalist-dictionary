@@ -29,8 +29,8 @@ export default function SignUp() {
 	}
 	if (session.status == 'authenticated') redirect('/')
 	return (
-		<div className='max-w-md'>
-			<h1 className='text-2xl lg:text-4xl mb-5 font-medium text-blue-900 dark:text-sky-400 '>
+		<div className='max-w-md mx-auto'>
+			<h1 className='text-2xl lg:text-4xl text-center mb-5 font-medium text-blue-500 dark:text-sky-400 '>
 				Create account
 			</h1>
 			<form
@@ -99,7 +99,7 @@ export default function SignUp() {
 					<button
 						type='submit'
 						title='submit'
-						className='bg-blue-900 dark:bg-sky-400 w-full rounded-lg py-2  text-white dark:text-slate-950 outline-none focus:ring-2 ring-blue-400'>
+						className='bg-blue-500 dark:bg-sky-400 w-full rounded-lg py-2  text-white dark:text-slate-950 outline-none focus:ring-2 ring-blue-400'>
 						Sign Up
 					</button>
 				</div>

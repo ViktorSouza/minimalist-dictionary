@@ -6,7 +6,7 @@ import React from 'react'
 export default function UserOptions() {
 	return (
 		<ul
-			className='hidden focus-visible:flex focus:flex peer-focus-within:flex flex-col hover:flex focus-within:flex absolute top-0 right-0 mt-10  rounded-md dark:shadow-none shadow-md bg-slate-200 dark:bg-slate-900 w-44'
+			className=' rounded-md dark:shadow-none shadow-md bg-slate-200 dark:bg-slate-900 w-44'
 			role='menu'>
 			<li
 				className='hover:bg-slate-300 dark:hover:bg-slate-800 py-2 px-3 rounded-md'
