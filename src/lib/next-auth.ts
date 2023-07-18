@@ -17,17 +17,12 @@ export const authOptions: AuthOptions = {
 			}
 			return token
 		},
-		session: async ({ session, token }) => {
-			const userDB = await prisma.user.findUnique({
-				where: { email: token.email ?? '' },
-			})
-
+		session: ({ session, token }) => {
 			return {
 				...session,
 				user: {
 					email: session.user.email,
 					username: token.name,
-					favoriteWords: userDB?.favoriteWords,
 					id: token.id,
 				},
 			}
@@ -36,14 +31,15 @@ export const authOptions: AuthOptions = {
 	providers: [
 		CredentialsProvider({
 			async authorize(credentials, req) {
-				if (credentials === null) return null
+				if (credentials == undefined) return null
+
 				const user = await prisma.user.findUnique({
 					where: {
-						email: credentials!.email,
+						email: credentials.email,
 					},
 				})
 				if (!user) return null
-				if (!bcrypt.compareSync(credentials!.password, user.password))
+				if (!bcrypt.compareSync(credentials.password, user.password))
 					return null
 				const responseObject = {
 					email: user.email,
@@ -54,7 +50,7 @@ export const authOptions: AuthOptions = {
 				return responseObject as User
 			},
 			credentials: {
-				username: {
+				email: {
 					label: 'Email',
 					type: 'email',
 					placeholder: 'youremail@example.com',

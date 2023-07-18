@@ -24,9 +24,7 @@ export default async function RootLayout({
 			className={theme?.value ?? ''}>
 			<body
 				className={` ${inter.className} bg-slate-200 dark:bg-gray-950 text-slate-700 overflow-x-hidden dark:text-slate-300 min-h-screen`}>
-				<SessionProvider>
-					<main className=''>{children}</main>
-				</SessionProvider>
+				<SessionProvider>{children}</SessionProvider>
 			</body>
 		</html>
 	)

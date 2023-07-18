@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 		<>
 			<Header />
 			<main
-				className='mx-auto xl:max-w-7xl max-xl:px-5'
+				className='mx-auto xl:max-w-7xl max-2xl:px-5'
 				style={{
 					minHeight: 'calc(100vh - 106px)',
 				}}>
