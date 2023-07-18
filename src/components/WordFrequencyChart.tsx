@@ -1,5 +1,5 @@
 'use client'
-// import { Line } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -11,9 +11,9 @@ import {
 	Tooltip,
 	Legend,
 } from 'chart.js'
-import { Chart } from 'react-chartjs-2'
 import { useTheme } from '../hooks/useTheme'
 import { useEffect, useRef } from 'react'
+import { ChartJSOrUndefined } from 'react-chartjs-2/dist/types'
 ChartJS.register(
 	CategoryScale,
 	LinearScale,
@@ -30,7 +30,7 @@ export default function WordFrequencyChart({
 	wordFrequency: number[]
 }) {
 	const [theme] = useTheme()
-	const chartRef = useRef<ChartJS>(null)
+	const chartRef = useRef<ChartJSOrUndefined<'line', number[], number>>(null)
 	const options: ChartOptions<'line'> = {
 		plugins: {
 			legend: {
@@ -85,8 +85,8 @@ export default function WordFrequencyChart({
 
 	return (
 		<>
-			<Chart
-				type='line'
+			<Line
+				// type='line'
 				ref={chartRef}
 				options={options}
 				data={data}

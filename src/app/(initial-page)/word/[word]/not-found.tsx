@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import RandomWordList from '../../../../components/RandomWordsList'
 import NotFoundText from '../../../../components/NotFoundText'
 import WordsSuggestion from '../../../../components/WordsSuggestion'

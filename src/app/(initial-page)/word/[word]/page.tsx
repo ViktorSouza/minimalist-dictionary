@@ -1,15 +1,8 @@
-import {
-	fetchDict,
-	getFavoriteWords,
-	getWordFrequency,
-} from '@/utils/dictionary'
+import { fetchDict, getWordFrequency } from '@/utils/dictionary'
 import WordMeaning from '@/components/WordMeaning'
-import { getCurrentUser } from '@/lib/session'
 import RandomWordList from '@/components/RandomWordsList'
 import WordFrequencyChart from '@/components/WordFrequencyChart'
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
-import { prisma } from '../../../../db/db'
 import WordsList from '../../../../components/WordsList'
 
 export default async function RandomWord({

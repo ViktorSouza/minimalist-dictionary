@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import WordsList from './WordsList'
 
 export default async function RandomWordList({

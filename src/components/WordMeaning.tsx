@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { IWords } from '../types/IWords'
 import { signIn, useSession } from 'next-auth/react'
-import { Session } from 'next-auth'
-import WordFrequencyChart from './WordFrequencyChart'
+
 import {
 	bookmarkWord,
 	getFavoriteWords,
@@ -14,15 +13,13 @@ import {
 export default function WordMeaning({
 	word,
 	wordFrequency,
-}: // session,
-{
+}: {
 	word: IWords
 	wordFrequency?: number[]
 }) {
 	const audioRef = useRef<HTMLAudioElement>(null)
 	// const audio = new Audio(word?.phonetics[0]?.audio)
-	let session1 = useSession()
-	const session = session1.data?.user
+	let session = useSession()
 
 	//TODO add an option to choose the voice
 	const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
@@ -59,7 +56,7 @@ export default function WordMeaning({
 						className='bg-amber-200/70 hover:bg-yellow-200/50 dark:bg-yellow-950 hover:dark:bg-yellow-900 text-amber-600 dark:text-yellow-300 transition-colors rounded-full px-3 disabled:opacity-50'
 						title='Bookmark this word'
 						onClick={async () => {
-							if (session1.status === 'unauthenticated') signIn()
+							if (session.status === 'unauthenticated') signIn()
 							favoriteWords?.includes(word.word)
 								? await unbookmarkWord(word.word)
 								: await bookmarkWord(word.word)

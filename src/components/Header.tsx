@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import WordSearch from './WordSearch'
 import ThemeToggle from './ThemeToggle'
-import { signOut } from 'next-auth/react'
 import UserOptions from './UserOptions'
 
 export default function Header() {

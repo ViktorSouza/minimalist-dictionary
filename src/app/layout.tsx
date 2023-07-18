@@ -2,12 +2,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import WordSearch from '@/components/WordSearch'
-import Link from 'next/link'
 import SessionProvider from '@/components/ProvidersWrapper'
-import { redirect } from 'next/navigation'
-import ThemeToggle from '../components/ThemeToggle'
-import Header from '../components/Header'
 import { cookies } from 'next/dist/client/components/headers'
 
 const inter = Inter({ subsets: ['latin'] })
