@@ -13,7 +13,7 @@ async function InitialPage() {
 					made by:{' '}
 					<Link
 						className='text-blue-500 dark:text-sky-400 font-semibold'
-						href={'https://viktorsouza.netlify.app/'}>
+						href={'https://viktorsouza.vercel.app/'}>
 						Viktor
 					</Link>
 				</h2>
