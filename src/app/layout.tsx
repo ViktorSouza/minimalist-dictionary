@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import SessionProvider from '@/components/ProvidersWrapper'
 import { cookies } from 'next/dist/client/components/headers'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,16 @@ export default async function RootLayout({
 		<html
 			lang='en'
 			className={theme?.value ?? ''}>
+			<Script src='https://www.googletagmanager.com/gtag/js?id=G-0B2P1YZYNS' />
+			<Script id='google-analytics'>
+				{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-0B2P1YZYNS');
+        `}
+			</Script>
 			<body
 				className={` ${inter.className} bg-slate-200 dark:bg-gray-950 text-slate-700 overflow-x-hidden dark:text-slate-300 min-h-screen`}>
 				<SessionProvider>{children}</SessionProvider>
